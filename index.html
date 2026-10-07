@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f8ff">
+<meta name="description" content="StockLearner — learn stocks, understand markets and join our Telegram community.">
+<title>StockLearner — Learn. Understand. Grow.</title>
+<style>
+:root{
+  --bg:#f7f8ff;--ink:#17172b;--muted:#666783;--purple:#6957ff;--blue:#3c9cff;
+  --cyan:#5de4ff;--card:#ffffffcc;--line:#ffffff80;--shadow:0 24px 70px #3d42a018;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+radial-gradient(circle at 85% 5%,#dff7ff 0,transparent 30%),
+radial-gradient(circle at 10% 20%,#ebe4ff 0,transparent 28%),var(--bg);color:var(--ink);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:5}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:21px;letter-spacing:-.6px}
+.logoMark{width:38px;height:38px;border-radius:13px;background:linear-gradient(145deg,#765fff,#40b9ff);box-shadow:0 10px 25px #5e64ff38;display:grid;place-items:center;color:#fff;font-size:20px;transform:rotate(-6deg)}
+.navJoin{padding:11px 17px;border-radius:14px;background:#fff;border:1px solid #e8e9f7;box-shadow:0 8px 25px #4c4f9b12;font-weight:800;font-size:14px}
+.hero{min-height:calc(100vh - 76px);display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:45px;padding:38px 0 80px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #e7e7f5;border-radius:999px;padding:9px 13px;font-size:12px;font-weight:800;color:#56566e;box-shadow:0 9px 25px #5555aa0e}
+.dot{width:8px;height:8px;border-radius:50%;background:#24d99b;box-shadow:0 0 0 5px #24d99b1c}
+h1{font-size:clamp(44px,6vw,76px);line-height:.98;letter-spacing:-4px;margin:20px 0}
+.gradient{background:linear-gradient(90deg,#5d4df7,#2e9df7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:18px;line-height:1.65;color:var(--muted);max-width:560px}
+.ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;padding:16px 22px;border-radius:17px;font-size:16px;font-weight:900;transition:.2s;box-shadow:0 15px 35px #5d5aff30}
+.cta:hover{transform:translateY(-3px)}
+.primary{color:white;background:linear-gradient(135deg,#705cff,#3d9cff)}
+.secondary{background:#fff;color:#31314b;border:1px solid #e8e8f4;box-shadow:none}
+.note{margin-top:13px;font-size:12px!important;color:#8888a0!important}
+.visual{position:relative;min-height:540px;display:grid;place-items:center}
+.glow{position:absolute;width:360px;height:360px;background:#6b60ff32;filter:blur(55px);border-radius:50%}
+.phone{position:relative;width:280px;height:540px;border-radius:39px;padding:11px;background:#151528;box-shadow:0 40px 80px #35335b35,0 0 0 10px #ffffffa8;transform:rotate(5deg);z-index:2}
+.screen{height:100%;border-radius:30px;overflow:hidden;background:linear-gradient(180deg,#eef4ff,#fff)}
+.status{height:38px;padding:13px 17px 0;display:flex;justify-content:space-between;font-size:9px;font-weight:800;color:#555a77}
+.app{padding:18px}
+.appTop{display:flex;justify-content:space-between;align-items:center}
+.appTitle{font-weight:900;font-size:18px}
+.avatar{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,#765eff,#58cfff)}
+.welcome{margin-top:24px;color:#70718a;font-size:11px}
+.welcome b{display:block;color:#202039;font-size:22px;margin-top:3px}
+.chartCard{margin-top:17px;background:#fff;border-radius:20px;padding:15px;box-shadow:0 12px 30px #5962aa16}
+.chartHead{display:flex;justify-content:space-between;font-size:10px;color:#85869c}
+.chartVal{font-size:24px;font-weight:900;margin:5px 0}
+.chart{height:115px;position:relative;overflow:hidden}
+svg{width:100%;height:100%}
+.learnCard{margin-top:14px;background:linear-gradient(135deg,#6d5cff,#469eff);border-radius:18px;padding:15px;color:#fff;box-shadow:0 13px 28px #605cff30}
+.learnCard small{opacity:.8}.learnCard b{display:block;margin-top:4px;font-size:16px}
+.floating{position:absolute;z-index:3;background:#fff;border:1px solid #fff;border-radius:18px;padding:12px 14px;box-shadow:0 18px 45px #45458a22;display:flex;align-items:center;gap:9px;font-size:12px;font-weight:900}
+.f1{top:90px;right:8px;transform:rotate(-5deg)}.f2{bottom:100px;left:0;transform:rotate(4deg)}
+.coin{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#ffe77b,#ffad28);box-shadow:inset -3px -4px 5px #e58d2038;color:#8a5a00}
+.features{padding:70px 0 100px}
+.sectionTitle{text-align:center;max-width:650px;margin:auto}
+.sectionTitle h2{font-size:clamp(30px,4vw,46px);letter-spacing:-2px}
+.sectionTitle p{color:var(--muted);margin-top:12px;line-height:1.6}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+.card{background:#ffffffb8;border:1px solid #fff;border-radius:25px;padding:26px;box-shadow:var(--shadow);backdrop-filter:blur(14px)}
+.icon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:#eeeaff;font-size:22px;margin-bottom:18px}
+.card h3{font-size:19px;margin-bottom:8px}.card p{color:var(--muted);font-size:14px;line-height:1.65}
+.join{padding:25px 0 90px}
+.joinBox{position:relative;overflow:hidden;border-radius:32px;padding:55px 35px;text-align:center;background:linear-gradient(135deg,#201c55,#4e43b9);color:white;box-shadow:0 30px 80px #36308a30}
+.joinBox:before,.joinBox:after{content:"";position:absolute;border-radius:50%;background:#ffffff12}
+.joinBox:before{width:280px;height:280px;left:-100px;top:-160px}.joinBox:after{width:330px;height:330px;right:-150px;bottom:-210px}
+.joinBox>*{position:relative;z-index:1}.joinBox h2{font-size:clamp(30px,5vw,48px);letter-spacing:-2px}.joinBox p{opacity:.8;margin:12px auto 24px;max-width:600px;line-height:1.6}
+footer{padding:25px 0 40px;text-align:center;color:#8a8aa0;font-size:12px}
+@media(max-width:800px){
+ .hero{grid-template-columns:1fr;text-align:center;padding-top:25px;gap:25px}
+ .hero p{margin:auto}.ctaRow{justify-content:center}
+ .visual{min-height:520px;transform:scale(.9);margin-top:-10px}
+ .cards{grid-template-columns:1fr}
+ .navJoin{padding:10px 13px}
+}
+@media(max-width:430px){
+ nav{height:68px}.logo{font-size:18px}.logoMark{width:34px;height:34px}
+ h1{font-size:47px;letter-spacing:-2.8px}
+ .hero p{font-size:16px}.cta{width:100%}
+ .visual{transform:scale(.78);min-height:450px;margin-top:-45px;margin-bottom:-30px}
+ .f1{right:-8px}.f2{left:-5px}
+ .joinBox{padding:45px 22px}
+}
+</style>
+</head>
+<body>
+<nav class="container">
+  <a class="logo" href="#"><span class="logoMark">↗</span>StockLearner</a>
+  <a class="navJoin" href="https://t.me/+msQxoKJE32k1NGJl" target="_blank" rel="noopener">Join Telegram →</a>
+</nav>
+
+<main>
+<section class="hero container">
+  <div>
+    <span class="badge"><span class="dot"></span> Learn the market. One step at a time.</span>
+    <h1>Stocks made <span class="gradient">simple & fun.</span></h1>
+    <p>Build your stock-market knowledge with easy-to-understand insights, market concepts and practical learning—right inside our Telegram community.</p>
+    <div class="ctaRow">
+      <a class="cta primary" href="https://t.me/+msQxoKJE32k1NGJl" target="_blank" rel="noopener">✈️ Join StockLearner</a>
+      <a class="cta secondary" href="#learn">Explore Learning ↓</a>
+    </div>
+    <p class="note">Educational content only. No guaranteed returns or investment promises.</p>
+  </div>
+
+  <div class="visual" aria-label="3D StockLearner mobile dashboard illustration">
+    <div class="glow"></div>
+    <div class="floating f1"><span class="coin">₹</span> Learn • Practice • Improve</div>
+    <div class="floating f2">📊 Market Knowledge</div>
+    <div class="phone">
+      <div class="screen">
+        <div class="status"><span>9:41</span><span>● ● ●</span></div>
+        <div class="app">
+          <div class="appTop"><span class="appTitle">StockLearner</span><span class="avatar"></span></div>
+          <div class="welcome">Good morning 👋<b>Ready to learn?</b></div>
+          <div class="chartCard">
+            <div class="chartHead"><span>Learning Progress</span><span>Today</span></div>
+            <div class="chartVal">78%</div>
+            <div class="chart">
+              <svg viewBox="0 0 250 115" preserveAspectRatio="none">
+                <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#6c5cff"/><stop offset="1" stop-color="#48b9ff"/></linearGradient></defs>
+                <path d="M0 94 C22 88 28 72 48 78 S70 92 89 62 S117 68 132 47 S153 56 169 35 S194 46 207 24 S232 30 250 10" fill="none" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/>
+                <path d="M0 94 C22 88 28 72 48 78 S70 92 89 62 S117 68 132 47 S153 56 169 35 S194 46 207 24 S232 30 250 10 L250 115 L0 115Z" fill="url(#g)" opacity=".10"/>
+              </svg>
+            </div>
+          </div>
+          <div class="learnCard"><small>Today's lesson</small><b>📈 Understanding Market Trends</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features container" id="learn">
+  <div class="sectionTitle">
+    <h2>Learn without the complicated jargon.</h2>
+    <p>A friendly place to understand how the stock market works and become a more informed market participant.</p>
+  </div>
+  <div class="cards">
+    <article class="card"><div class="icon">📚</div><h3>Easy Learning</h3><p>Break down stock-market concepts into simple, practical lessons that are easier to understand.</p></article>
+    <article class="card"><div class="icon">📊</div><h3>Market Insights</h3><p>Follow educational market observations and learn how to read charts, trends and market behaviour.</p></article>
+    <article class="card"><div class="icon">🚀</div><h3>Keep Improving</h3><p>Join a learning-focused community and keep building your financial-market knowledge over time.</p></article>
+  </div>
+</section>
+
+<section class="join container">
+  <div class="joinBox">
+    <h2>Your market-learning journey starts here.</h2>
+    <p>Join the StockLearner Telegram community and stay connected with our latest educational content.</p>
+    <a class="cta primary" style="background:#fff;color:#332b8e;box-shadow:none" href="https://t.me/+msQxoKJE32k1NGJl" target="_blank" rel="noopener">✈️ Join Free on Telegram</a>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 StockLearner • Educational content, not financial advice.</footer>
+</body>
+</html>
